@@ -67,12 +67,11 @@ function activeSelect (e) {
 
 function addCoffee (e) {
     e.preventDefault();
-    var newCoffee = addedCoffee.value;
-    var newRoast = addedRoast.value;
-    var awesome = coffees.push({id: coffees.length, name: "knock you out of your", roast: "socks"});
+    let newName = addedCoffee.value;
+    let newRoast = addedRoast.value;
+    coffees.push({id: coffees.length, name: newName, roast: newRoast},);
 
-
-    section.innerHTML = renderCoffees(awesome);
+    section.innerHTML = renderCoffees(coffees);
 }
 
 
