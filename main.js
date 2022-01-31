@@ -39,7 +39,6 @@ function updateCoffees(e) {
 
 function activeSearch (e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     var selectedCoffee = coffeeSelection.value;
     coffees.forEach(function(coffee) {
@@ -72,6 +71,7 @@ function addCoffee (e) {
     coffees.push({id: coffees.length, name: newName, roast: newRoast},);
 
     section.innerHTML = renderCoffees(coffees);
+    localStorage.setItem("coffeeList", JSON.stringify(coffees))
 }
 
 
