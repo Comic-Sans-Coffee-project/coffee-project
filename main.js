@@ -65,15 +65,16 @@ function activeSelect (e) {
     });
 }
 
-// function searchCoffees(e) {
-//     e.preventDefault(); // don't submit the form, we just want to update the data
-//     var selectedCoffee = coffeeSelection.value;
-//     var filteredCoffees = [];
-//     coffees.forEach(function(coffee) {
-//
-//     });
-//     section.innerHTML = renderCoffees(filteredCoffees);
-// }
+function addCoffee (e) {
+    e.preventDefault();
+    var newCoffee = addedCoffee.value;
+    var newRoast = addedRoast.value;
+    var awesome = coffees.push({id: coffees.length, name: "knock you out of your", roast: "socks"});
+
+
+    section.innerHTML = renderCoffees(awesome);
+}
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -97,10 +98,12 @@ var section = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 var coffeeSelection = document.querySelector('#coffee-selection');
-
+var addedCoffee = document.querySelector("#add-coffee");
+var addedRoast = document.querySelector("#add-roast");
+var addCoffeeButton = document.querySelector("#beans")
 
 section.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 coffeeSelection.addEventListener('keyup', activeSearch);
 roastSelection.addEventListener('change', activeSelect);
-
+addCoffeeButton.addEventListener("click", addCoffee);
