@@ -10,9 +10,8 @@ function renderCoffee(coffee) {
 }
 
 function renderCoffees(coffees) {
-    coffees.reverse()
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for(var i = 0; i <= coffees.length-1; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -23,10 +22,10 @@ function updateCoffees(e) {
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     var selectedCoffee = coffeeSelection.value;
+    if (selectedRoast === "all") {
+        return section.innerHTML = renderCoffees(coffees);
+    }
     coffees.forEach(function(coffee) {
-        if (selectedRoast === "all") {
-            return section.innerHTML = renderCoffees(coffees);
-        }
         if (coffee.roast === selectedRoast && selectedCoffee === "") {
             filteredCoffees.push(coffee);
         }
