@@ -1,14 +1,6 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    // var html = '<tr class="coffee">';
-    // html += '<td>' + coffee.id + '</td>';
-    // html += '<td>' + coffee.name + '</td>';
-    // html += '<td>' + coffee.roast + '</td>';
-    // html += '</tr>';
-    //
-    // return html;
-
     var html = '<div class="coffee">';
     html += '<h1>' + coffee.name + '</h1>';
     html += '<p>' + coffee.roast + '</p>';
@@ -30,13 +22,28 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
+    var selectedCoffee = coffeeSelection.value;
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+        if (coffee.roast === selectedRoast && selectedCoffee === "") {
+            filteredCoffees.push(coffee);
+        }
+        if (coffee.name.toUpperCase() === selectedCoffee.toUpperCase()) {
+            filteredCoffees = []
             filteredCoffees.push(coffee);
         }
     });
     section.innerHTML = renderCoffees(filteredCoffees);
 }
+
+// function searchCoffees(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     var selectedCoffee = coffeeSelection.value;
+//     var filteredCoffees = [];
+//     coffees.forEach(function(coffee) {
+//
+//     });
+//     section.innerHTML = renderCoffees(filteredCoffees);
+// }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -59,7 +66,8 @@ var coffees = [
 var section = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+var coffeeSelection = document.querySelector('#coffee-selection');
+
 
 section.innerHTML = renderCoffees(coffees);
-
 submitButton.addEventListener('click', updateCoffees);
