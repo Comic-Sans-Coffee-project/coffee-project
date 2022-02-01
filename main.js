@@ -4,6 +4,7 @@ function renderCoffee(coffee) {
     html += '<h2>' + coffee.name + '</h2>';
     html += '<p>' + coffee.roast + '</p>';
     html += '<p id="concentration">' + coffee.caffeine + '</p>'
+    html += '<button>Select</button>'
     html += '</div>';
 
     return html;

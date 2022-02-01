@@ -72,3 +72,9 @@ video {
     padding: 0;
     background-color: #3b2d18;
 }
+button {
+    height: 30px;
+    width: 70px;
+    background-color: #3b2d18;
+    margin-left: 1em;
+}
