@@ -20,11 +20,57 @@ video {
 }
 #our-info {
     background-color: rgba(0,0,0,.5);
-    margin: 3em 3em;
+
+    font-size: 20px;
 }
  {
     color: #82af7c;
 }
 ::placeholder {
     color: #82af7c;
+}
+#our-text {
+    margin: 3em 3em;
+}
+#coffee-column {
+    height: 100px;
+}
+.coffee {
+    display: flex;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.coffee p {
+    padding: 0;
+}
+#roast-selection {
+    background-color: #3b2d18;
+    margin-bottom: 1em;
+}
+#coffee-selection {
+    background-color: #3b2d18;
+}
+#submit {
+    background-color: #3b2d18;
+}
+#add-roast {
+    background-color: #3b2d18;
+    width: 100px;
+    margin: 1em 0;
+    padding: 0;
+}
+#add-coffee {
+    background-color: #3b2d18;
+}
+#beans {
+    background-color: #3b2d18;
+}
+#concentration {
+    margin-left: .5em;
+}
+#add-caffeine {
+    width: 100px;
+    margin: 1em 0;
+    padding: 0;
+    background-color: #3b2d18;
 }
