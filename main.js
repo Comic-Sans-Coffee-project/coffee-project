@@ -68,7 +68,20 @@ function addCoffee (e) {
     e.preventDefault();
     let newName = addedCoffee.value;
     let newRoast = addedRoast.value;
-    coffees.push({id: coffees.length, name: newName, roast: newRoast},);
+    let newCaffeine = addedCaffeine.value
+    if (newCaffeine === "Weak Sauce"){
+        newCaffeine = "100mg"
+    }
+    else if (newCaffeine === "Just Enough"){
+        newCaffeine = "200mg"
+    }
+    else if (newCaffeine === "Leonidas"){
+        newCaffeine = "300mg"
+    }
+    else if (newCaffeine === "OP!!!"){
+        newCaffeine = "500mg"
+    }
+    coffees.push({id: coffees.length, name: newName, roast: newRoast, caffeine: newCaffeine},);
 
     section.innerHTML = renderCoffees(coffees);
     localStorage.setItem("coffeeList", JSON.stringify(coffees))
@@ -100,6 +113,7 @@ var coffeeSelection = document.querySelector('#coffee-selection');
 var addedCoffee = document.querySelector("#add-coffee");
 var addedRoast = document.querySelector("#add-roast");
 var addCoffeeButton = document.querySelector("#beans")
+var addedCaffeine = document.querySelector("#add-caffeine")
 
 section.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);

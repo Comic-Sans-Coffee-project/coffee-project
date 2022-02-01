@@ -23,9 +23,7 @@ video {
 
     font-size: 20px;
 }
- {
-    color: #82af7c;
-}
+
 ::placeholder {
     color: #82af7c;
 }
@@ -55,7 +53,7 @@ video {
 }
 #add-roast {
     background-color: #3b2d18;
-    width: 100px;
+    width: 75px;
     margin: 1em 0;
     padding: 0;
 }
@@ -69,7 +67,7 @@ video {
     margin-left: .5em;
 }
 #add-caffeine {
-    width: 100px;
+    width: 125px;
     margin: 1em 0;
     padding: 0;
     background-color: #3b2d18;
